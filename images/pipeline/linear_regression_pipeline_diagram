@@ -1,0 +1,60 @@
+digraph {
+	node [fillcolor="#f0f8ff" fontname=Arial fontsize=10 shape=box style=filled]
+	size="10,10"
+	Pipeline [fontname="Arial Bold" fontsize=15]
+	columntransformer [label=Columntransformer fontname="Arial Bold" fontsize=12]
+	Pipeline -> columntransformer
+	columntransformer_numeric [label="Numeric Pipeline 
+ 
+SimpleImputer (
+fill_value: None, 
+strategy: mean)
+ 
+StandardScaler ()"]
+	columntransformer -> columntransformer_numeric
+	columntransformer_numeric_features [label="Features\n
+item_weight
+item_visibility
+item_mrp" fillcolor="#d4ebff" fontcolor=black shape=box style=filled]
+	columntransformer_numeric -> columntransformer_numeric_features
+	columntransformer_ordinal [label="Ordinal Pipeline 
+ 
+SimpleImputer (
+fill_value: None, 
+strategy: most_frequent)
+ 
+OrdinalEncoder (
+categories=[[Small, Medium, Large],
+ [Tier 1, Tier 2, Tier 3],
+ [1985, 1987, 1997, 1998, 1999, 2002, 2004, 2007, 2009]], 
+handle_unknown: error)
+ 
+StandardScaler ()"]
+	columntransformer -> columntransformer_ordinal
+	columntransformer_ordinal_features [label="Features\n
+outlet_size
+outlet_location_type
+outlet_establishment_year" fillcolor="#d4ebff" fontcolor=black shape=box style=filled]
+	columntransformer_ordinal -> columntransformer_ordinal_features
+	columntransformer_categorical [label="Categorical Pipeline 
+ 
+SimpleImputer (
+fill_value: MISSING, 
+strategy: constant)
+ 
+OneHotEncoder (
+categories=auto, 
+drop: first, 
+handle_unknown: ignore)"]
+	columntransformer -> columntransformer_categorical
+	columntransformer_categorical_features [label="Features\n
+outlet_type
+item_fat_content" fillcolor="#d4ebff" fontcolor=black shape=box style=filled]
+	columntransformer_categorical -> columntransformer_categorical_features
+	columntransformer_remainder [label="Remainder
+passthrough"]
+	columntransformer -> columntransformer_remainder
+	linearregression [label="Linearregression
+LinearRegression ()"]
+	Pipeline -> linearregression
+}
