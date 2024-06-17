@@ -33,7 +33,9 @@ Feel free to reach out through the following platforms:
 <img alt="Streamlit Logo" src="https://raw.githubusercontent.com/Jl02C08Jl15Me08Ea13Nc24/Jl02C08Jl15Me08Ea13Nc24-01/main/images/logos/streamlit_logo.png" width="50">
 
 
-<img alt="Streamlit Logo" src="https://raw.githubusercontent.com/Jl02C08Jl15Me08Ea13Nc24/Jl02C08Jl15Me08Ea13Nc24-01/main/images/logos/streamlit_logo.png" width="50">
+<img alt="LinkedIn Logo" src="https://raw.githubusercontent.com/Jl02C08Jl15Me08Ea13Nc24/Jl02C08Jl15Me08Ea13Nc24-01/main/images/logos/linkedin_logo.png" width="50">
+
+<img alt="GitHub Logo" src="https://raw.githubusercontent.com/Jl02C08Jl15Me08Ea13Nc24/Jl02C08Jl15Me08Ea13Nc24-01/main/images/logos/github_logo.png" width="50">
 
 ### Project Repository
 
