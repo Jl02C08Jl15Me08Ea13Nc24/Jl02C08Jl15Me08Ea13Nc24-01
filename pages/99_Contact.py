@@ -21,7 +21,7 @@ I’m a data science enthusiast with a passion for turning data into actionable 
 Feel free to reach out through the following platforms:
 
 <ul>
-    <li><a href="https://github.com/Edgar-Villasenor" rel="nofollow noreferrer">
+    <li><a href="https://github.com/Edgar-Villasenor?tab=repositories" rel="nofollow noreferrer">
         <img src="https://i.stack.imgur.com/tskMh.png" alt="GitHub" style="width:20px; height:20px; margin-right:5px;">Visit my GitHub
     </a></li>
     <li><a href="https://www.linkedin.com/in/edgarvillasenor/" rel="nofollow noreferrer">
@@ -29,11 +29,17 @@ Feel free to reach out through the following platforms:
     </a> </li>
 </ul>
 
+
+<img alt="Streamlit Logo" src="https://raw.githubusercontent.com/Jl02C08Jl15Me08Ea13Nc24/Jl02C08Jl15Me08Ea13Nc24-01/main/images/logos/streamlit_logo.png" width="50">
+
+
+<img alt="Streamlit Logo" src="https://raw.githubusercontent.com/Jl02C08Jl15Me08Ea13Nc24/Jl02C08Jl15Me08Ea13Nc24-01/main/images/logos/streamlit_logo.png" width="50">
+
 ### Project Repository
 
 <ul>
-    <li><a href="https://github.com/Edgar-Villasenor/IMDB-Movie-Analysis-Project" rel="nofollow noreferrer">
-        <img src="https://i.stack.imgur.com/tskMh.png" alt="GitHub" style="width:20px; height:20px; margin-right:5px;">IMDB Movie Analysis Repository
+    <li><a href="https://github.com/Edgar-Villasenor/Sales-Prediction-Analysis" rel="nofollow noreferrer">
+        <img src="https://i.stack.imgur.com/tskMh.png" alt="GitHub" style="width:20px; height:20px; margin-right:5px;">Sales Prediction Analysis Repository
     </a></li>
 </ul>
 """, unsafe_allow_html=True)

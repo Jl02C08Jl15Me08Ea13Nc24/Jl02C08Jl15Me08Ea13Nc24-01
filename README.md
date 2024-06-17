@@ -75,7 +75,7 @@ This analysis provides a useful resource for stakeholders in the retail industry
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td style="text-align: center; vertical-align: middle; border: 0; outline: 0;">
-<img alt="Streamlit Logo" src="https://raw.githubusercontent.com/Edgar-Villasenor/IMDB-Movie-Analysis-Project/main/images/logos/streamlit_logo.png?token=GHSAT0AAAAAACH5OQZDUW6UHDRVADVY7GUGZPYXP7A" width="50">
+<img alt="Streamlit Logo" src="https://raw.githubusercontent.com/Jl02C08Jl15Me08Ea13Nc24/Jl02C08Jl15Me08Ea13Nc24-01/main/images/logos/streamlit_logo.png" width="50">
 </td>
 <td style="text-align: center; vertical-align: middle; border: 0; outline: 0;">
 <h1 style="font-size: 34px;">Streamlit App</h1>
@@ -83,4 +83,4 @@ This analysis provides a useful resource for stakeholders in the retail industry
 </tr>
 </table>
 
-For an enhanced exploration of the project's outcomes, an interactive analysis is available on the Streamlit app. This platform facilitates a dynamic engagement with the data and findings, featuring interactive visualizations and predictive analytics tools, allowing for a deeper understanding of the methodologies and insights derived from the analysis. [Click here to explore the Streamlit app](https://edgar-villasenor-imdb-movie-analysis.streamlit.app/).
+For an enhanced exploration of the project's outcomes, an interactive analysis is available on the Streamlit app. This platform facilitates a dynamic engagement with the data and findings, featuring interactive visualizations and predictive analytics tools, allowing for a deeper understanding of the methodologies and insights derived from the analysis. [Click here to explore the Streamlit app](https://edgar-villasenor-sales-prediction-analysis.streamlit.app/).

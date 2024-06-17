@@ -1,9 +1,14 @@
 # deployment functions
 
 # ------------------------------
+# Functions for Streamlit 
+import streamlit as st
+import pandas as pd
 import os
+import joblib
 from pprint import pprint
 
+# ------------------------------
 # Prepare File Structure
 def build_file_paths(root_dir, exclude_dirs=None):
     if exclude_dirs is None:
@@ -74,14 +79,26 @@ def test_filepaths(nested_dict):
                 print(f"Path exists: {value}")
 
 
-# ------------------------------
-import os
-import joblib
-import tensorflow as tf
 
-# Filepaths
+
+
+
+#-------------------------------------------------------------------------- 
+# Function to load CSV data
+@st.cache_data
+def load_csv_data(filepath):
+    return pd.read_csv(filepath)
+
+#-------------------------------------------------------------------------- 
+# Function to load DF data
+@st.cache_data
 def load_Xy_data(joblib_fpath):
     return joblib.load(joblib_fpath)
 
-def load_tf_dataset(fpath):
-    return tf.data.Dataset.load(fpath)
+#-------------------------------------------------------------------------- 
+# Function to load ML models
+@st.cache_resource
+def load_ml_model(fpath):
+    return joblib.load(fpath)
+
+# ------------------------------
