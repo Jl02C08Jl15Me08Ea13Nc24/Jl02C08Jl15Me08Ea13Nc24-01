@@ -73,4 +73,7 @@ This analysis provides a useful resource for stakeholders in the retail industry
 
 ## :books: Additional Resources
 
-For an in-depth exploration of the methodologies and analytical techniques underpinning these findings, access to code notebooks is provided. These documents present a detailed account of the analytical journey, from data cleaning through sentiment analysis, offering insights into the foundational analytics of the project. Exploration of these resources is encouraged for stakeholders and parties interested in gaining a complete understanding of the conducted analysis and its implications on movie production and marketing strategies. [Project Repository](https://edgar-villasenor-sales-prediction-analysis.streamlit.app/Contact)
+For an in-depth exploration of the methodologies and analytical techniques underpinning these findings, access to code notebooks is provided. These documents present a detailed account of the analytical journey, from data cleaning through sentiment analysis, offering insights into the foundational analytics of the project. Exploration of these resources is encouraged for stakeholders and parties interested in gaining a complete understanding of the conducted analysis and its implications on movie production and marketing strategies. 
+
+<a href="https://github.com/Edgar-Villasenor/Sales-Prediction-Analysis" rel="nofollow noreferrer">
+        <img  src="https://raw.githubusercontent.com/Jl02C08Jl15Me08Ea13Nc24/Jl02C08Jl15Me08Ea13Nc24-01/main/images/logos/github_logo.png" alt="GitHub" style="width:25px; height:25px; margin-right:5px;">Sales Prediction Analysis Repository</a>

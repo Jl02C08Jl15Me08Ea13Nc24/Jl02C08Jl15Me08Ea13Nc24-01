@@ -1,4 +1,8 @@
+# ML Functions for Streamlit
+
+
 # ------------------------------
+# Model Performance
 import pandas as pd
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
@@ -30,7 +34,7 @@ def st_model_metrics(model,
 
     model_metrics_results_df = pd.DataFrame(metrics)
     return model_metrics_results_df.set_index('Data').style.format("{:." + str(metric_decimals) + "f}")  
-
+# ------------------------------
 
 # ------------------------------
 import pandas as pd
@@ -89,6 +93,7 @@ def st_error_analysis(model,
     styled_df = error_analysis_result_df.style.format("{:." + str(error_decimals) + "f}")
 
     return styled_df, fig
+# ------------------------------
 
 # ------------------------------
 from sklearn.pipeline import Pipeline
@@ -125,7 +130,7 @@ def st_feature_importances(model, feature_names, model_name='', feature_imp_deci
     else:
         # Return None if feature importances are not supported
         return None, None
-
+# ------------------------------
 
 # ------------------------------
 import pandas as pd
@@ -166,6 +171,7 @@ def st_permutation_importances(model,
     styled_df = importances_df.style.format({'Importance': "{:." + str(perm_decimals) + "f}"})
 
     return styled_df, fig
+# ------------------------------
 
 # ------------------------------
 import pandas as pd
@@ -207,6 +213,7 @@ def st_coefficients(model, feature_names, model_name='', coeff_decimals=3):
     else:
         # Return None if coefficients are not supported
         return None, None
+# ------------------------------
 
         
 # ------------------------------
@@ -224,7 +231,7 @@ def st_shap_analysis(model, preprocessor, X_train, feature_names, model_name='')
 
     # Check if the model is a pipeline and extract the estimator
     if isinstance(model, Pipeline):
-        # Assuming the estimator is the last step in the pipeline
+        # The estimator is the last step in the pipeline
         estimator = model.steps[-1][1]
     else:
         estimator = model
@@ -249,7 +256,7 @@ def st_shap_analysis(model, preprocessor, X_train, feature_names, model_name='')
                       feature_names=feature_names, 
                       plot_type="bar", 
                       show=False)
-    plt.title(f"{model_name} - SHAP Summary Plot")  # Setting title for the summary plot
+    plt.title(f"{model_name} - SHAP Summary Plot")  
     plt.tight_layout()
     plt.close()
 
@@ -261,11 +268,58 @@ def st_shap_analysis(model, preprocessor, X_train, feature_names, model_name='')
     }).sort_values(by='Mean Absolute SHAP Value', ascending=False)
 
     return shap_html, shap_values, shap_df, X_train_preprocessed
-
-
-
 # ------------------------------
 
 
+# ------------------------------
+import lime
+import lime.lime_tabular
+import numpy as np
+import pandas as pd
+import plotly.express as px
 
+def st_lime_analysis(model, preprocessor, X_train, X_test, feature_names, model_name, num_features=10):
+    # Preprocess the training and test data
+    X_train_preprocessed = preprocessor.transform(X_train)
+    X_test_preprocessed = preprocessor.transform(X_test)
+
+    # Get feature names after preprocessing
+    feature_names_after_preprocessing = preprocessor.get_feature_names_out()
+
+    # Create a LIME explainer using preprocessed data
+    explainer = lime.lime_tabular.LimeTabularExplainer(
+        X_train_preprocessed,
+        feature_names=feature_names_after_preprocessing,
+        class_names=['Sales'],
+        mode='regression'
+    )
+
+    # Choose a random instance from the preprocessed test set to explain
+    instance_idx = np.random.randint(0, X_test_preprocessed.shape[0])
+    instance = X_test_preprocessed[instance_idx]
+
+    # Define a prediction function that uses the last step of the pipeline
+    def predict_fn(x):
+        # Get the last step of the pipeline
+        last_step = model.steps[-1][1]
+        return last_step.predict(x)
+
+    # Get the LIME explanation
+    exp = explainer.explain_instance(
+        instance, 
+        predict_fn, 
+        num_features=num_features
+    )
+
+    # Create a DataFrame with the LIME results
+    feature_importance = pd.DataFrame({
+        'Feature': [item[0] for item in exp.as_list()],
+        'Importance': [item[1] for item in exp.as_list()]
+    }).sort_values('Importance', key=abs, ascending=False)
+
+    # Create a bar plot of feature importances
+    fig = px.bar(feature_importance, x='Importance', y='Feature', orientation='h',
+                 title=f'{model_name} - LIME Feature Importance for Single Instance')
+
+    return exp, feature_importance, fig
 # ------------------------------
