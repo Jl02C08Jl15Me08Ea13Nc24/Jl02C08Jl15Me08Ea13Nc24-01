@@ -80,8 +80,17 @@ def test_filepaths(nested_dict):
 
 
 
-
-
+# ------------------------------
+def correct_paths(paths):
+    """
+    Recursively corrects file paths in a nested dictionary.
+    """
+    if isinstance(paths, dict):
+        for key, value in paths.items():
+            paths[key] = correct_paths(value)
+    elif isinstance(paths, str):
+        paths = paths.replace("\\", "/")
+    return paths
 
 #-------------------------------------------------------------------------- 
 # Function to load CSV data
