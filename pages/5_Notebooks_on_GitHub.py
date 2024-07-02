@@ -5,10 +5,6 @@
 #--------------------------------------------------------------------------
 import streamlit as st
 import os, sys
-# Custom Functions
-sys.path.append(os.path.abspath("/"))
-from custom_package import stfns
-
 
 # Set the title of the browser tab
 st.set_page_config(page_title="Sales Prediction Analysis - Notebooks")

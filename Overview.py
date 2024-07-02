@@ -4,8 +4,6 @@
 #--------------------------------------------------------------------------
 import streamlit as st
 import json, os, sys
-# Custom Functions
-from custom_package import stfns
 
 # Set the title of the browser tab
 st.set_page_config(page_title="Sales Prediction Analysis - Overview")
