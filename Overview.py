@@ -19,10 +19,10 @@ with open(FILEPATHS_FILE) as f:
 #--------------------------------------------------------------------------
 # Banner
 #--------------------------------------------------------------------------
-fpath_banner = FPATHS['images']['app']['app_banner.png']
+###fpath_banner = FPATHS['images']['app']['app_banner.png']
 
 # Display the image
-st.image(fpath_banner)
+###st.image(fpath_banner)
 #--------------------------------------------------------------------------
 # Including a Markdown File Readme on main page
 #--------------------------------------------------------------------------
